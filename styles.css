@@ -24,8 +24,11 @@
   width: 90%;
 }
 
-h1 {
-    color: white;
+.realizado{
+  font-size: 0.7em;
+}
+i {
+  font-size: 1.5em;
 }
 
 

@@ -23,12 +23,12 @@
         
         <!-- HEADER -->
         <header>
-            <h1 class="titulo">Crea tu rutina <i class='bx bx-dumbbell'></i></h1>
+            <h1 class="titulo">Crea tu rutina</h1>
            
             <!-- Formulario Seleccionador -->
             <div class="divSeleccion">
-              <select class="form-select form-select-sm me-3" aria-label=".form-select-sm example">
-                <option selected>Selecciona un ejercicio...</option>
+              <select id="selector" class="form-select form-select-sm me-3" aria-label=".form-select-sm example">
+                <option disabled selected>Selecciona un ejercicio...</option>
                 <option value="1">Piernas: Sentadillas</option>
                 <option value="2">Piernas: Peso muerto</option>
                 <option value="3">Piernas: Hip Thrust</option>
@@ -41,12 +41,19 @@
                 <option value="10">Brazo: Curl con barra Z</option>
                 <option value="11">Brazo: Press francés</option>
               </select>
-              <button type="submit" class="btn btn-success ">Guardar</button>
+              <button id="guardar" type="submit" class="btn btn-success ">Guardar</button>
             </div>
 
-            <div id="listaRutina">
-              <div class="alert alert-primary mt-5" role="alert">
-                A simple primary alert—check it out!
+            <!-- Lista Rutina -->
+            <div class="listaRutina" id="listaRutina">
+              <div class="alert alert-danger mt-5" role="alert">
+                <i class='bx bx-dumbbell float-start me-2'></i>
+                <b class="actividad me-3">Texto de la Actividad</b>
+                <b class= 'realizado'> NO REALIZADO</b>
+                <span class="float-end">
+                  <i class='bx bx-check'></i>
+                  <i class='bx bxs-trash ms-5'></i>
+                </span>
               </div>
             </div>
 
