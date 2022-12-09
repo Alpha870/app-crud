@@ -19,34 +19,45 @@
   <body class="body">
     <section class="fondo">
       <div class="oscurecer">
+        <main>
         
         <!-- HEADER -->
         <header>
-          <main>
             <h1 class="titulo">Crea tu rutina <i class='bx bx-dumbbell'></i></h1>
-            <div class="div-header">
-              <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+           
+            <!-- Formulario Seleccionador -->
+            <div class="divSeleccion">
+              <select class="form-select form-select-sm me-3" aria-label=".form-select-sm example">
                 <option selected>Selecciona un ejercicio...</option>
-                <option value="1">Peso muerto</option>
-                <option value="9">Sentadillas</option>
-                <option value="8">Hip Thrust</option>
-                <option value="2">Remo con barra</option>
-                <option value="3">Press de banca</option>
-                <option value="4">Aperturas con mancuernas</option>
-                <option value="5">Rueda abdominal con barra</option>
-                <option value="6">Curl con barra Z</option>
-                <option value="7">Press francés</option>
+                <option value="1">Piernas: Sentadillas</option>
+                <option value="2">Piernas: Peso muerto</option>
+                <option value="3">Piernas: Hip Thrust</option>
+                <option value="4">Espalda: Remo con barra</option>
+                <option value="5">Espalda: Remo con mancuernas</option>
+                <option value="6">Espalda: Jalón al mentón</option>
+                <option value="7">Pectorales: Press de banca</option>
+                <option value="8">Pectorales: Aperturas con mancuernas</option>
+                <option value="9">Abdominal: Rueda abdominal con barra</option>
+                <option value="10">Brazo: Curl con barra Z</option>
+                <option value="11">Brazo: Press francés</option>
               </select>
               <button type="submit" class="btn btn-success ">Guardar</button>
             </div>
+
+            <div id="listaRutina">
+              <div class="alert alert-primary mt-5" role="alert">
+                A simple primary alert—check it out!
+              </div>
             </div>
-          </main>
-        </header>
-        
-        <!-- FOOTER -->
-        <footer>
+
+            </div>
+          </header>
           
-        </footer>
+          <!-- FOOTER -->
+          <footer>
+            
+          </footer>
+        </main>
         
       </div>
     </section>
