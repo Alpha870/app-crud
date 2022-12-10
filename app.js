@@ -1,28 +1,32 @@
 // variables
-
-const formularioUI = document.getElementById("selector");
-const listadoUI = document.getElementById("listaRutina");
-const submit = document.getElementById("guardar");
+const selector = document.getElementById("selector");
+const enviar = document.getElementById("submit");
+const lista = document.getElementById("listaRutina")
 let arrayActividades = [];
 
 // Funciones
+const crearActividad = (ejercicio) => {
+  let item = {
+    ejercicio: ejercicio,
+  };
+  arrayActividades.push(item);
+  return item;
+};
 
+const guardarLS = () => {
+  localStorage.setItem("rutina", JSON.stringify(arrayActividades));
+};
+
+const imprimirLS = () => {
+  listaRutina.innerHTML = '';
+}
 
 // Eventos
 
-formularioUI.addEventListener("change", (e) => {
-  e.preventDefault();
-
-  const memoria = [];
-  let actividadUI = formularioUI.options[formularioUI.selectedIndex].text;
-  memoria.push(actividadUI);
-  
-  
-  submit.addEventListener("click", (e) => {
-      e.preventDefault();
-      console.log(memoria)
-    
-      
-
-  });
+enviar.addEventListener("click", () => {
+  const ejercicio = selector.options[selector.selectedIndex].text;
+  crearActividad(ejercicio);
+  guardarLS();
 });
+
+document.addEventListener("DOMContentLoaded", imprimirLS);
