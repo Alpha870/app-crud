@@ -12,8 +12,14 @@ const crearActividad = (ejercicio) => {
     ejercicio: ejercicio,
     estado: "NO REALIZADO ❌",
   };
-  arrayActividades.push(item);
+    arrayActividades.push(item);
   return item;
+};
+
+//Funcion maximo listado
+const maximo = () => {
+  alert('🥵 Hey tendrias que descansar por hoy...')
+  arrayActividades.pop();
 };
 
 //Funcion de guardar en el localStorage
@@ -27,6 +33,7 @@ const imprimirLS = () => {
   listaRutina.innerHTML = "";
 
   arrayActividades = JSON.parse(localStorage.getItem("rutina"));
+
   if (arrayActividades === null) {
     arrayActividades = [];
   } else {
@@ -73,8 +80,12 @@ const eliminarLS = (texto) => {
 
 //Funcion de editar
 const editarLS = (texto) => {
-  let indexArray = arrayActividades.findIndex((elemento) => {
-    return elemento.ejercicio === texto;
+  let indexArray;
+
+  arrayActividades.forEach((elemento, index) => {
+    if (elemento.ejercicio === texto) {
+      indexArray = index;
+    }
   });
   arrayActividades[indexArray].estado = "REALIZADO ✔";
   guardarLS();
@@ -85,8 +96,13 @@ const editarLS = (texto) => {
 // Evento que detecta la seleccion del select con el submit
 enviar.addEventListener("click", () => {
   const ejercicio = selector.options[selector.selectedIndex].text;
+
+  if (arrayActividades.length >= 5) {
+    return maximo();
+  } else {
   crearActividad(ejercicio);
   guardarLS();
+  }
 });
 
 document.addEventListener("DOMContentLoaded", imprimirLS);

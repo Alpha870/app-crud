@@ -92,10 +92,8 @@ i {
 }
 
 .footer {
-  transition: color 0.5s ease-in-out;
   bottom: 4em;
   color: rgba(255, 255, 255, 0.5);
-  left: 4em;
   position: absolute;
 }
 .footer ul {
@@ -106,22 +104,54 @@ i {
 .footer li a{
   margin: 10px;
   color: inherit;
-  display: inline-block;
 }
 
-.footer .copyright {
-  font-size: 0.8em;
-  list-style: none;
-  padding: 0;
-}
 .footer .copyright li {
   margin: 10px;
-}
-
-.footer .copyright li:hover{
-  color: white;
+  font-size: 0.8em;
 }
 
 #github:hover {
   color: white;
+}
+
+@media screen and (max-width: 690px) {
+  
+  header {
+    margin-left: 10px;
+    width: 90%;
+  }
+
+  .divSeleccion {
+    width: 90%;
+  }
+
+  .footer {
+    margin-top: 30px;
+    bottom: 1em;
+  }
+
+}
+
+@media screen and (max-width: 355px) {
+  /* border: 2px solid red; */
+
+  html{
+    background-color: black;
+  }
+
+  header {
+    margin-left: 10px;
+    width: 90%;
+  }
+  
+  .listaRutina #selector{ 
+    margin-top: 50px;
+    position: fixed;
+  }
+
+  .footer {
+    position: fixed;
+  }
+
 }
