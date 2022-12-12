@@ -22,7 +22,16 @@ header {
   width: 90%;
 }
 
+#divInterno {
+  min-height: 82px;
+}
+
+.listaRutina span {
+  margin-top: -10px;
+}
+
 .realizado {
+  margin-top: 1em;
   font-size: 0.7em;
 }
 i {
@@ -30,7 +39,7 @@ i {
 }
 
 /* CARRUSSEL DE FONDO */
-.fondo {
+html {
   width: auto;
   height: 100vh;
   animation-name: cambiarImagen;
@@ -39,9 +48,10 @@ i {
   animation-iteration-count: infinite;
 }
 
-.oscurecer {
+body {
   width: auto;
-  height: 100vh;
+  height: 130vh;
+  min-height: auto;
   animation-name: oscurecer;
   animation-duration: var(--global-time);
   animation-timing-function: ease-in;
@@ -94,14 +104,15 @@ i {
 .footer {
   bottom: 4em;
   color: rgba(255, 255, 255, 0.5);
-  position: absolute;
+  position: fixed;
+  bottom: 1em;
 }
 .footer ul {
   display: flex;
   list-style: none;
 }
 
-.footer li a{
+.footer li a {
   margin: 10px;
   color: inherit;
 }
@@ -115,43 +126,29 @@ i {
   color: white;
 }
 
-@media screen and (max-width: 690px) {
-  
+@media screen and (max-width: 640px) {
+  main {
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+
   header {
     margin-left: 10px;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 2560px) {
+  main {
+    margin-top: 50px;
+  }
+
+  header {
+    /* margin-left: 10px; */
     width: 90%;
   }
 
   .divSeleccion {
     width: 90%;
   }
-
-  .footer {
-    margin-top: 30px;
-    bottom: 1em;
-  }
-
-}
-
-@media screen and (max-width: 355px) {
-  /* border: 2px solid red; */
-
-  html{
-    background-color: black;
-  }
-
-  header {
-    margin-left: 10px;
-    width: 90%;
-  }
-  
-  .listaRutina #selector{ 
-    margin-top: 50px;
-    position: fixed;
-  }
-
-  .footer {
-    position: fixed;
-  }
-
 }

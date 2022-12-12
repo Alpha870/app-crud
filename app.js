@@ -19,7 +19,6 @@ const crearActividad = (ejercicio) => {
 //Funcion maximo listado
 const maximo = () => {
   alert('🥵 Hey tendrias que descansar por hoy...')
-  arrayActividades.pop();
 };
 
 //Funcion de guardar en el localStorage
@@ -40,10 +39,10 @@ const imprimirLS = () => {
     arrayActividades.forEach((element) => {
       if (element.estado === "NO REALIZADO ❌") {
         listaRutina.innerHTML += `
-      <div class="alert alert-danger mt-3" role="alert">
+      <div class="alert alert-danger mt-3" role="alert" id="divInterno">
       <i class='bx bx-dumbbell float-start me-2'></i>
       <b class="actividad me-3">${element.ejercicio}</b>
-      <b class= 'realizado'>${element.estado}</b>
+      <p class= 'realizado'>${element.estado}</p>
       <span class="float-end">
         <i class='bx bx-check'id='check'></i>
         <i class='bx bxs-trash ms-2' id='trash'></i>
@@ -51,10 +50,10 @@ const imprimirLS = () => {
     </div>`;
       } else {
         listaRutina.innerHTML += `
-      <div class="alert alert-success mt-3" role="alert">
+      <div class="alert alert-success mt-3" role="alert" id="divInterno">
       <i class='bx bx-dumbbell float-start me-2'></i>
       <b class="actividad me-3">${element.ejercicio}</b>
-      <b class= 'realizado'>${element.estado}</b>
+      <p class= 'realizado'>${element.estado}</p>
       <span class="float-end">
         <i class='bx bx-check'id='check'></i>
         <i class='bx bxs-trash ms-2' id='trash'></i>
@@ -96,9 +95,10 @@ const editarLS = (texto) => {
 // Evento que detecta la seleccion del select con el submit
 enviar.addEventListener("click", () => {
   const ejercicio = selector.options[selector.selectedIndex].text;
-
+  //no dejaremos añadir si quiere crear mas de 5 div
   if (arrayActividades.length >= 5) {
     return maximo();
+
   } else {
   crearActividad(ejercicio);
   guardarLS();
