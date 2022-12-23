@@ -40,8 +40,8 @@ const imprimirLS = () => {
       if (element.estado === "NO REALIZADO ❌") {
         listaRutina.innerHTML += `
       <div class="alert alert-danger mt-3" role="alert" id="divInterno">
-      <i class='bx bx-dumbbell float-start me-2'></i>
-      <b class="actividad me-3">${element.ejercicio}</b>
+      <i class='bx bx-dumbbell float-start me-2' id="pesa"></i>
+      <b class="actividad me-3" id="texto-ejercicio">${element.ejercicio}</b>
       <p class= 'realizado'>${element.estado}</p>
       <span class="float-end">
         <i class='bx bx-check'id='check'></i>
@@ -51,8 +51,8 @@ const imprimirLS = () => {
       } else {
         listaRutina.innerHTML += `
       <div class="alert alert-success mt-3" role="alert" id="divInterno">
-      <i class='bx bx-dumbbell float-start me-2'></i>
-      <b class="actividad me-3">${element.ejercicio}</b>
+      <i class='bx bx-dumbbell float-start me-2' id="pesa"></i>
+      <b class="actividad me-3" id="texto-ejercicio">${element.ejercicio}</b>
       <p class= 'realizado'>${element.estado}</p>
       <span class="float-end">
         <i class='bx bx-check'id='check'></i>

@@ -23,7 +23,10 @@ header {
 }
 
 #divInterno {
-  min-height: 82px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .listaRutina span {
@@ -31,11 +34,11 @@ header {
 }
 
 .realizado {
-  margin-top: 1em;
   font-size: 0.7em;
 }
+
 i {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 /* CARRUSSEL DE FONDO */
@@ -135,6 +138,25 @@ body {
   header {
     margin-left: 10px;
     width: 95%;
+  }
+
+  #divInterno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #pesa {
+    display: none;
+  }
+
+  #texto-ejercicio {
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  i {
+    font-size: 1.2em;
   }
 }
 
